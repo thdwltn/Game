@@ -9,16 +9,29 @@ function random(n){
 
 function App(){
     const [num,setNum] = useState(1);
+    const [sum,setSum] = useState(0);
+    const [history,setHistory] = useState([]);
+
     function handleClick(){
         // console.log('1')
         const nextNum = random(6);
-        setNum(nextNum)
-        // console.log(nextNum)
+        setNum(nextNum);
+        setSum(sum + nextNum);
+        // const nextHistory = history.push(nextNum)
+        setHistory([...history,nextNum]);
     }
 
     function resetClick(){
-    setNum('1')
+    setNum(1)
+    setSum(0)
+    setHistory([0])
     }
+
+
+ 
+       
+
+
 
     return(
         <div>
@@ -32,9 +45,9 @@ function App(){
                 <figcaption>
                     <dl>
                         <dt>총합</dt>
-                        <dd>0</dd>
+                        <dd>{sum}</dd>
                         <dt>기록</dt>
-                        <dd></dd>
+                        <dd>{history}</dd>
                     </dl>
                 </figcaption>
             </figure>
