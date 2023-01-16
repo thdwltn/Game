@@ -24,8 +24,8 @@ function Dics({color,num}){
     const src = diceImg[color][num-1];
     const alt = `${color}${num}`;
     return(
-        <img src={diceImg[color][num-1]} alt={diceImg[color][num-1]}/>
-        // <img src={src} alt={alt}/>
+        // <img src={diceImg[color][num-1]} alt={diceImg[color][num-1]}/>
+        <img src={src} alt={alt}/>
         // color,num값 받기 
     )
 }
